@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YT Signer — Safely Sign Into YouTube on Your Device</title>
+  <meta name="description" content="YT Signer is a lightweight Android helper that signs into your YouTube accounts and keeps sessions stored safely on your device. Download the APK and add your account in under a minute." />
+  <meta name="theme-color" content="#07060a" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============ WELCOME ANIMATED INTRO ============ -->
+  <div class="intro" id="intro" aria-hidden="false">
+    <span class="intro__orb intro__orb--red"></span>
+    <span class="intro__orb intro__orb--purple"></span>
+    <span class="intro__orb intro__orb--mix"></span>
+
+    <div class="intro__stage">
+      <div class="intro__logo" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="76" height="76">
+          <defs>
+            <linearGradient id="introGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ff2d55" />
+              <stop offset="1" stop-color="#8b5cf6" />
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="18" fill="url(#introGrad)" />
+          <path d="M26 20 L46 32 L26 44 Z" fill="#fff" />
+        </svg>
+      </div>
+
+      <p class="intro__msg intro__msg--1">Welcome to <span class="grad-text">YT Signer</span></p>
+      <p class="intro__msg intro__msg--2">Sign in to YouTube. Safely. <span class="grad-text">On your device.</span></p>
+    </div>
+
+    <button class="intro__skip" id="introSkip" type="button">Skip intro</button>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="YT Signer home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="34" height="34">
+            <defs>
+              <linearGradient id="brandGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#ff2d55" />
+                <stop offset="1" stop-color="#8b5cf6" />
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="18" fill="url(#brandGrad)" />
+            <path d="M26 20 L46 32 L26 44 Z" fill="#fff" />
+          </svg>
+        </span>
+        <span class="brand__name">YT&nbsp;Signer</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#download">How to Download</a>
+        <a href="#accounts">Add Account</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--primary btn--sm nav__cta-mobile js-download" href="downloads/yt-signer.apk" download="YT-Signer.apk">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download
+        </a>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--primary btn--sm js-download" href="downloads/yt-signer.apk" download="YT-Signer.apk">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download App
+        </a>
+        <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__glow hero__glow--red" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--purple" aria-hidden="true"></div>
+
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <span class="pill">Android &middot; Free &middot; v1.0</span>
+          <h1>Your YouTube accounts.<br /><span class="grad-text">Signed in, stored safely.</span></h1>
+          <p class="hero__sub">
+            YT Signer is a lightweight Android helper that signs into your YouTube accounts
+            and keeps every session on your phone — never on someone else's server.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg js-download" href="downloads/yt-signer.apk" download="YT-Signer.apk">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download App
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#download">See how it works</a>
+          </div>
+
+          <ul class="hero__meta">
+            <li>Free forever</li>
+            <li>Android 8.0+</li>
+            <li>~8 MB APK</li>
+            <li>No ads</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="hero__phone">
+            <img src="assets/img/hero-phone.svg" alt="" width="420" height="640" />
+          </div>
+          <div class="chip chip--1">
+            <span class="chip__icon chip__icon--red">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            Sessions stay on device
+          </div>
+          <div class="chip chip--2">
+            <span class="chip__icon chip__icon--purple">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M16 11a4 4 0 1 0-4-4M4 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M18 8a3 3 0 1 1 0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            Multiple accounts
+          </div>
+          <div class="chip chip--3">
+            <span class="chip__icon chip__icon--red">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M13 2L4 14h7l-1 8 10-14h-7l0-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            Setup in 60 seconds
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Why YT Signer</span>
+          <h2>Built for speed, <span class="grad-text">designed for trust</span></h2>
+          <p>Everything you need to manage YouTube sign-ins from one small app.</p>
+        </div>
+
+        <div class="features">
+          <article class="card reveal">
+            <span class="card__icon card__icon--red">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>On-device sessions</h3>
+            <p>Sign-ins are saved locally on your phone. Your credentials never touch our servers — because we don't have any.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__icon card__icon--purple">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M16 11a4 4 0 1 0-4-4M4 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M18 8a3 3 0 1 1 0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Multiple accounts</h3>
+            <p>Add every YouTube account you manage and switch between them without signing out and back in each time.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__icon card__icon--red">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M13 2L4 14h7l-1 8 10-14h-7l0-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Featherweight APK</h3>
+            <p>Roughly 8 MB, installs in seconds and runs smoothly even on older Android devices.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__icon card__icon--purple">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16M4 12h10M4 18h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <h3>Guided sign-in</h3>
+            <p>Every tap is shown with real app screenshots — Settings, + Add Account, Sign in. No guesswork, no configuration.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__icon card__icon--red">
+              <svg viewBox="0 0 24 24" width="22" height="22"><rect x="4" y="10" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Private by design</h3>
+            <p>No ads, no trackers, no analytics on your accounts. What happens on your phone stays on your phone.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__icon card__icon--purple">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3v12m0 0l-4-4m4 4l4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Always the latest</h3>
+            <p>The Download button at the top of this page always serves the newest official build of YT Signer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW TO DOWNLOAD ============ -->
+    <section class="section section--alt" id="download">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Step-by-step guide</span>
+          <h2>How to <span class="grad-text">download &amp; install</span></h2>
+          <p>Follow these three steps to get YT Signer on your phone.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <div class="step__copy">
+              <span class="step__num">1</span>
+              <h3>Tap the Download button</h3>
+              <p>
+                Press the red <strong>Download App</strong> button at the top of this page (or in the hero).
+                Your browser will start downloading <strong>YT-Signer.apk</strong> right away.
+              </p>
+              <ul class="ticklist">
+                <li>Works with Chrome, Edge &amp; Samsung Internet</li>
+                <li>The file is about 8 MB</li>
+              </ul>
+            </div>
+            <figure class="step__media">
+              <img src="assets/img/step-download.svg" alt="Screenshot: tapping the Download APK button in the browser" width="480" height="760" loading="lazy" />
+            </figure>
+          </article>
+
+          <article class="step step--flip reveal">
+            <div class="step__copy">
+              <span class="step__num">2</span>
+              <h3>Allow installs from your browser</h3>
+              <p>
+                Android may show <em>“For your security, your phone is not allowed to install unknown apps from this source.”</em>
+                Tap <strong>Settings</strong> and switch on <strong>Allow from this source</strong>, then go back.
+              </p>
+              <ul class="ticklist">
+                <li>You only do this once per browser</li>
+                <li>It does not affect any other apps</li>
+              </ul>
+            </div>
+            <figure class="step__media">
+              <img src="assets/img/step-allow.svg" alt="Screenshot: allowing unknown app installs from the browser settings" width="480" height="760" loading="lazy" />
+            </figure>
+          </article>
+
+          <article class="step reveal">
+            <div class="step__copy">
+              <span class="step__num">3</span>
+              <h3>Open the APK and tap Install</h3>
+              <p>
+                Open your Downloads folder (or tap the download notification), select
+                <strong>YT-Signer.apk</strong> and tap <strong>Install</strong>. When it finishes, tap
+                <strong>Open</strong> — you're ready to add your first account.
+              </p>
+              <ul class="ticklist">
+                <li>Installs in a few seconds</li>
+                <li>Find the app icon on your home screen afterwards</li>
+              </ul>
+            </div>
+            <figure class="step__media">
+              <img src="assets/img/step-install.svg" alt="Screenshot: Android install confirmation dialog for YT Signer" width="480" height="760" loading="lazy" />
+            </figure>
+          </article>
+        </div>
+
+        <div class="mid-cta reveal">
+          <a class="btn btn--primary btn--lg js-download" href="downloads/yt-signer.apk" download="YT-Signer.apk">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download YT Signer
+          </a>
+          <span class="mid-cta__note">Free &middot; Android 8.0+ &middot; No ads</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW TO SIGN IN ============ -->
+    <section class="section" id="accounts">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Real app screenshots</span>
+          <h2>How to <span class="grad-text">sign in to YouTube</span></h2>
+          <p>Four quick taps to add your Google account — shown exactly as it looks inside the app.</p>
+        </div>
+
+        <div class="shots">
+          <article class="shot reveal">
+            <figure class="shot__frame">
+              <img src="assets/img/shot-settings.jpg" alt="YT Signer Settings screen with the Accounts option circled" width="720" height="1600" loading="lazy" />
+            </figure>
+            <div class="shot__body">
+              <div class="shot__top">
+                <span class="shot__num">1</span>
+                <h3>Open Settings → Accounts</h3>
+              </div>
+              <p>Go to <strong>Settings</strong> in YT Signer, then tap <strong>Accounts</strong> — add and manage Google accounts.</p>
+            </div>
+          </article>
+
+          <article class="shot reveal">
+            <figure class="shot__frame">
+              <img src="assets/img/shot-accounts.jpg" alt="Accounts screen with the plus Add Account button circled" width="720" height="1600" loading="lazy" />
+            </figure>
+            <div class="shot__body">
+              <div class="shot__top">
+                <span class="shot__num">2</span>
+                <h3>Tap + Add Account</h3>
+              </div>
+              <p>On the Accounts screen, press the <strong>+ Add Account</strong> button at the bottom right.</p>
+            </div>
+          </article>
+
+          <article class="shot reveal">
+            <figure class="shot__frame">
+              <img src="assets/img/shot-signin.jpg" alt="MicroG RE Add Account screen with the Sign in button circled" width="720" height="1600" loading="lazy" />
+            </figure>
+            <div class="shot__body">
+              <div class="shot__top">
+                <span class="shot__num">3</span>
+                <h3>Press Sign in</h3>
+              </div>
+              <p>The MicroG RE screen opens — tap the blue <strong>Sign in</strong> button to connect a Google account.</p>
+            </div>
+          </article>
+
+          <article class="shot reveal">
+            <figure class="shot__frame">
+              <img src="assets/img/shot-google.jpg" alt="Google Sign in screen with email or phone field and Next button" width="720" height="1600" loading="lazy" />
+            </figure>
+            <div class="shot__body">
+              <div class="shot__top">
+                <span class="shot__num">4</span>
+                <h3>Enter your account</h3>
+              </div>
+              <p>Type your Google <strong>email or phone</strong>, tap <strong>Next</strong> — your account is added to YT Signer.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--alt" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <span class="pill">Questions</span>
+          <h2>Frequently <span class="grad-text">asked</span></h2>
+        </div>
+
+        <div class="faq reveal">
+          <details class="faq__item" open>
+            <summary>Is YT Signer free?</summary>
+            <div class="faq__body"><p>Yes. The APK on this page is completely free to download and use, with no ads or in-app purchases.</p></div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Are my account credentials safe?</summary>
+            <div class="faq__body"><p>YT Signer signs you in through Google's official sign-in page and stores the resulting session on your phone only. It does not upload your password or session to any server.</p></div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Which devices are supported?</summary>
+            <div class="faq__body"><p>Any Android device running Android 8.0 (Oreo) or newer. iOS is not supported yet — the app is Android-only for now.</p></div>
+          </details>
+
+          <details class="faq__item">
+            <summary>How do I update the app?</summary>
+            <div class="faq__body"><p>Tap the Download button at the top of this page to get the newest build, then install it over your current version — your accounts stay intact.</p></div>
+          </details>
+
+          <details class="faq__item">
+            <summary>How do I remove an account?</summary>
+            <div class="faq__body"><p>Open the account in the app and choose Remove. The stored session is deleted from the device immediately.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="cta">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="container cta__inner reveal">
+        <h2>Ready to sign in <span class="grad-text">the safe way?</span></h2>
+        <p>Download YT Signer, add your first account and you're set in under a minute.</p>
+        <a class="btn btn--primary btn--lg js-download" href="downloads/yt-signer.apk" download="YT-Signer.apk">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download App
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="brand brand--footer" href="#top">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="30" height="30">
+            <defs>
+              <linearGradient id="footGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#ff2d55" />
+                <stop offset="1" stop-color="#8b5cf6" />
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="18" fill="url(#footGrad)" />
+            <path d="M26 20 L46 32 L26 44 Z" fill="#fff" />
+          </svg>
+        </span>
+        <span class="brand__name">YT&nbsp;Signer</span>
+      </a>
+
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#accounts">Add Account</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <p class="footer__copy">&copy; <span id="year">2026</span> YT Signer. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
