@@ -109,34 +109,13 @@
     }, 3600);
   }
 
-  /* ---------------- Download button ---------------- */
-  var APK_URL = "downloads/yt-signer.apk";
-  var apkChecked = false;
-  var apkExists = true;
-
-  function checkApk() {
-    if (apkChecked) return Promise.resolve(apkExists);
-    apkChecked = true;
-    return fetch(APK_URL, { method: "HEAD" })
-      .then(function (res) {
-        apkExists = res.ok;
-      })
-      .catch(function () {
-        apkExists = false;
-      });
-  }
-
+  /* ---------------- Download button ----------------
+     Buttons link straight to the GitHub release asset.
+     GitHub serves it with Content-Disposition: attachment,
+     so the file downloads while the visitor stays on this page. */
   document.querySelectorAll(".js-download").forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      checkApk().then(function (ok) {
-        if (ok) {
-          showToast("Download started — YT-Signer.apk");
-        } else {
-          e.preventDefault();
-          showToast("The APK isn't uploaded yet. Add yt-signer.apk to the downloads/ folder.");
-        }
-      });
-      // let the browser proceed naturally if the file exists
+    btn.addEventListener("click", function () {
+      showToast("Download started — YT.Signer.apk (~108 MB)");
     });
   });
 

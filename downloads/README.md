@@ -1,12 +1,17 @@
 # App downloads
 
-Place the official app file here with this exact name:
+All Download buttons on the site point directly to the GitHub release asset:
 
 ```
-yt-signer.apk
+https://github.com/Praveendev629/yt-signer/releases/download/yt-signer/YT.Signer.apk
 ```
 
-The Download buttons on the site point to `downloads/yt-signer.apk`.
+GitHub serves release assets with `Content-Disposition: attachment`, so the APK
+downloads while the visitor stays on your site — no navigation to github.com.
 
-- Once the file exists, tapping any Download button starts the APK download immediately.
-- Until then, tapping shows a friendly toast so visitors aren't left with a broken link.
+## Publishing a new version
+
+1. Create a new GitHub release (or edit the existing one) and upload the new APK.
+2. If the tag or asset name changes, update the URL in:
+   - `index.html` — all `js-download` button `href`s
+3. Commit and push — Vercel redeploys automatically.
